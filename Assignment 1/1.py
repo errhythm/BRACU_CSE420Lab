@@ -24,7 +24,7 @@ def lexical_analyzer(code, check, store):
     for i in check: #taking all the values of the check list
         if i in code:
             store.add(i)
-            code = code.replace(i, "")
+            code = code.replace(i, " ")
     return code
 
 # Making an array which I will use later for identifiers and number
