@@ -1,11 +1,8 @@
 # read the contents of input.txt
 f = open("input.txt", "r")
 code = f.readlines()
-# ['int a, b, c;\n', 'float d, e;\n', 'a = b = 5;\n', 'c = 6;\n', 'if ( a > b)\n', '{\n', '    c = a - b;\n', '    e = d - 2.0;\n', '}\n', 'else\n', '{\n', '    d = e + 6.0;\n', '    b = a + c;\n', '}']
 # remove the newline character from each line
 code = [x.strip() for x in code]
-# ['int a, b, c;', 'float d, e;', 'a = b = 5;', 'c = 6;', 'if ( a > b)', '{', '    c = a - b;', '    e = d - 2.0;', '}', 'else', '{', '    d = e + 6.0;', '    b = a + c;', '}']
-
 # Get the list of keywords
 keywords = ["abstract", "continue", "for", "new", "switch", "assert", "default", "goto", "package", "synchronized",
             "boolean", "do", "if", "private", "this", "break", "double", "implements", "protected", "throw", "byte",
@@ -24,15 +21,14 @@ checkedlogical = set()
 checkednumber = set()
 checkedothers = set()
 
-
 def lexical_analyzer(code, check, store):
-    for i in check:
+    for i in check: #taking all the values of the check list
         if i in code:
             store.add(i)
             code = code.replace(i, "")
     return code
 
-
+# Making an array which I will use later for identifiers and number
 code_array = []
 
 for i in code:
@@ -43,6 +39,8 @@ for i in code:
         code = lexical_analyzer(code, math, checkedmath)
         code = lexical_analyzer(code, logical, checkedlogical)
         code = lexical_analyzer(code, others, checkedothers)
+    # if the code is not empty, then it is an identifier or a number.
+    # So, I will add it to the code_array for later use out of this loop.
     code_arr = code.split()
     code_array.append(code_arr)
 
