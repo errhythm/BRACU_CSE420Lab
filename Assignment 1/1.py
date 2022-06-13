@@ -52,16 +52,15 @@ for i in code_array:
             checkednumber.add(j)
 
 
-def print_output(type, set):
+def print_output(type, set, separator):
     print(type, end="")
-    for i in sorted(set):
-        print(i, end=" ")
-    print("")
+    print(separator.join(sorted(set)))
 
 
-print_output("Keywords: ", checkedkeywords)
-print_output("Identifiers: ", checkedidentifiers)
-print_output("Math: ", checkedmath)
-print_output("Logical: ", checkedlogical)
-print_output("Number: ", checkednumber)
-print_output("Others: ", checkedothers)
+print_output("Keywords: ", checkedkeywords, ", ")
+print_output("Identifiers: ", checkedidentifiers, ", ")
+print_output("Math: ", checkedmath, ", ")
+print_output("Logical: ", checkedlogical, ", ")
+print_output("Number: ", checkednumber, ", ")
+print_output("Others: ", checkedothers, " ")
+
