@@ -37,7 +37,7 @@ code_array = []
 
 for i in code:
     if i.startswith("//"):
-        code.remove(i)
+        code = code.replace(i, "")
     else:
         code = lexical_analyzer(i, keywords, checkedkeywords)
         code = lexical_analyzer(code, math, checkedmath)
