@@ -48,8 +48,11 @@ for i in code_array:
         if j.isalpha():
             checkedidentifiers.add(j)
         else:
-            checkednumber.add(j)
-
+            try:
+                if(float(j).is_integer()):
+                    checkednumber.add(j)
+            except:
+                checkedidentifiers.add(j)
 
 def print_output(type, set, separator):
     print(type, end="")
