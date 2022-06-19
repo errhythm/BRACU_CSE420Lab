@@ -11,6 +11,7 @@ keywords = ["if", "else", "while", "do", "break", "continue", "int",
 math = ["+", "-", "*", "/", "=", "%"]
 logical = ["<", ">", "<=", ">=", "==", "and", "or"]
 others = [",", ";", "(", ")", "{", "}", "[", "]"]
+
 # Making set() to add them in their own types to print output later
 checkedkeywords = set()
 checkedidentifiers = set()
