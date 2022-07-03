@@ -41,6 +41,7 @@ def checkValidDomain(domain):
     split_domain = domain.split(".")
     if "" in split_domain:
         split_domain.remove("")
+        return False
 
     symbols.insert(0, ".")
     symbols.insert(0, "-")
@@ -79,4 +80,3 @@ for i in code:
     else:
         print("Invalid")
 
-print(code)
