@@ -39,9 +39,15 @@ def checkValidEmail(email):
 
 def checkValidDomain(domain):
     split_domain = domain.split(".")
+    if "" in split_domain:
+        split_domain.remove("")
+
+    symbols.insert(0, ".")
+    symbols.insert(0, "-")
+
     for i in symbols:
         for k in range(len(split_domain)):
-            if split_domain[k][0].isdigit() or split_domain[-1][-1].isdigit():
+            if split_domain[k][0].isdigit():
                 return False
             if split_domain[k][0] == i or split_domain[k][-1] == i:
                 return False
@@ -49,12 +55,21 @@ def checkValidDomain(domain):
                 if split_domain[k][j] == i:
                     if split_domain[k][j] == split_domain[k][j + 1]:
                         return False
+    symbols.remove(".")
+    symbols.remove("-")
+    for i in symbols:
+        for k in range(len(split_domain)):
             for j in range(len(split_domain[k]) - 1):
                 if split_domain[k][j] == i:
                     return False
+            if split_domain[-1][-1].isdigit():
+                return False
             if " " in split_domain[k]:
                 return False
+            if "://" in split_domain[k]:
+                return True
     return True
+
 
 for i in code:
     if checkValidEmail(i):
