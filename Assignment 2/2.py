@@ -3,39 +3,64 @@ code = f.readlines()
 code = [x.strip() for x in code]
 
 n = int(code[0])
-print(n)
 code.pop(0)
 
-symbols = [".", ",", "-", "_", ";", ":", "!", "?", "=", "+", "*", "/", "(", ")", "{", "}", "[", "]", "#", "$", "%", "^", "&", "|"]
+symbols = [".", ",", "-", "_", ";", ":", "!", "?", "=", "+", "*", "/", "(", ")", "{", "}", "[", "]", "#", "$", "%", "^",
+           "&", "|"]
+
 
 def checkValidEmail(email):
     if email.count("@") == 1 and "." in email:
-        if email[0].isdigit() or email[-1].isdigit():
-            return False
-        else:
-            split_email = email.split("@")
-            for i in symbols:
-                if split_email[0][0] == i:
+        split_email = email.split("@")
+
+        for i in symbols:
+            for k in range(len(split_email)):
+                if split_email[k][0].isdigit() or split_email[1][-1].isdigit():
                     return False
-                if split_email[0][-1] == i:
+                if split_email[k][0] == i or split_email[k][-1] == i:
                     return False
-                for j in range(len(split_email[0]) - 1):
-                    if split_email[0][j] == i:
-                        if split_email[0][j] == split_email[0][j + 1]:
+                for j in range(len(split_email[k]) - 1):
+                    if split_email[k][j] == i:
+                        if split_email[k][j] == split_email[k][j + 1]:
                             return False
-            symbols.pop(0)
-            for i in symbols:
-                for j in range(len(split_email[0]) - 1):
-                    if split_email[0][j] == i:
+        symbols.remove(".")
+        symbols.remove("-")
+        for i in symbols:
+            for k in range(len(split_email)):
+                for j in range(len(split_email[k]) - 1):
+                    if split_email[k][j] == i:
                         return False
-            return True
+                if " " in split_email[k]:
+                    return False
+        if split_email[1].count(".") < 1:
+            return False
+        return True
 
 
-
+def checkValidDomain(domain):
+    split_domain = domain.split(".")
+    for i in symbols:
+        for k in range(len(split_domain)):
+            if split_domain[k][0].isdigit() or split_domain[-1][-1].isdigit():
+                return False
+            if split_domain[k][0] == i or split_domain[k][-1] == i:
+                return False
+            for j in range(len(split_domain[k]) - 1):
+                if split_domain[k][j] == i:
+                    if split_domain[k][j] == split_domain[k][j + 1]:
+                        return False
+            for j in range(len(split_domain[k]) - 1):
+                if split_domain[k][j] == i:
+                    return False
+            if " " in split_domain[k]:
+                return False
+    return True
 
 for i in code:
     if checkValidEmail(i):
-        print(i, code.index(i)+1)
+        print("Email,", code.index(i) + 1)
+    elif checkValidDomain(i):
+        print("Domain,", code.index(i) + 1)
     else:
         print("Invalid")
 
