@@ -6,4 +6,6 @@ for i in range(n):
     m = input()
     arr.append(m)
 
+
+
 print(arr)
