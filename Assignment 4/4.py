@@ -17,6 +17,3 @@ for line in code:
 print("Methods:")
 for m in method:
     print("{} ({}), return type: {}".format(m[1], m[2], m[0]))
-
-
-
