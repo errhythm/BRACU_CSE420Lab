@@ -17,8 +17,8 @@
 
 | **Submission No.** | Github Link | Question |
 | ----------- | ----------- | ----------- |
-| Assignment 1 | [Click Here](https://github.com/errhythm/CSE420Lab/tree/main/Assignment%201) | [Click Here](https://github.com/errhythm/CSE420Lab/blob/main/Assignment%201/Question.pdf) |
-| Assignment 2 | [Click Here](https://github.com/errhythm/CSE420Lab/tree/main/Assignment%202) | [Click Here](https://github.com/errhythm/CSE420Lab/blob/main/Assignment%202/Question.pdf) |
-| Assignment 3 | [Click Here](https://github.com/errhythm/CSE420Lab/tree/main/Assignment%203) | [Click Here](https://github.com/errhythm/CSE420Lab/blob/main/Assignment%203/Question.pdf) |
-| Assignment 4 | [Click Here](https://github.com/errhythm/CSE420Lab/tree/main/Assignment%204) | [Click Here](https://github.com/errhythm/CSE420Lab/blob/main/Assignment%204/Question.pdf) |
+| Assignment 1 | [Click Here](https://github.com/errhythm/BRACU_CSE420Lab/tree/main/Assignment%201) | [Click Here](https://github.com/errhythm/BRACU_CSE420Lab/blob/main/Assignment%201/Question.pdf) |
+| Assignment 2 | [Click Here](https://github.com/errhythm/BRACU_CSE420Lab/tree/main/Assignment%202) | [Click Here](https://github.com/errhythm/BRACU_CSE420Lab/blob/main/Assignment%202/Question.pdf) |
+| Assignment 3 | [Click Here](https://github.com/errhythm/BRACU_CSE420Lab/tree/main/Assignment%203) | [Click Here](https://github.com/errhythm/BRACU_CSE420Lab/blob/main/Assignment%203/Question.pdf) |
+| Assignment 4 | [Click Here](https://github.com/errhythm/BRACU_CSE420Lab/tree/main/Assignment%204) | [Click Here](https://github.com/errhythm/BRACU_CSE420Lab/blob/main/Assignment%204/Question.pdf) |
 
